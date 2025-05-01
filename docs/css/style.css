@@ -43,11 +43,11 @@ html {
     }
   }
   p:last-child {
-    margin-bottom: 0; /* 最後の<p>だけmargin消す */
+    margin-bottom: 0; /* Remove margin from last*/
   }
 }
 
-/* ヘッダー */
+/* Header */
 .navbar {
   .navbar-brand {
     display: inline-flex;
@@ -66,12 +66,12 @@ html {
   }
 }
 
-/* メインコンテナ */
+/* Main Container */
 #main-container {
   max-width: 1200px;
 }
 
-/* トップページ */
+/* Top Contents */
 .top-contents {
   ul {
     display: flex;
@@ -94,7 +94,7 @@ html {
   }
 }
 
-/* ローディング */
+/* Loading */
 .loading {
   background-color: #ffffffcf;
   position: fixed;
@@ -125,7 +125,7 @@ html {
   }
 }
 
-/* Select2 フローティングデザイン統一 */
+/* Select2 Unified Floating Design */
 .form-floating {
   .select2-container--bootstrap-5 {
     width: auto !important;
@@ -141,13 +141,13 @@ html {
 .input-group > .form-floating > .select2 > .selection > .select2-selection {
   border-radius: var(--bs-border-radius) 0 0 var(--bs-border-radius) !important;
 }
-/* Select2 disabled項目 */
+/* Select2 Disabled Items */
 .select2-results__option--disabled {
   background-color: var(--bs-secondary-bg) !important;
   display: none;
 }
 
-/* YouYubeレスポンシブ対応 */
+/* Youtube Responsive */
 .youtube {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -165,13 +165,13 @@ table.table {
   margin-bottom: 0;
 }
 
-/* ツールチップ */
+/* Tooltip */
 .tooltip {
   font-family: unset;
   --bs-tooltip-max-width: 24rem;
 }
 
-/* タイプ */
+/* Type */
 .type {
   font-size: 12px;
   min-width: 6rem;
@@ -183,71 +183,71 @@ table.table {
   border: #3333334c solid 3px;
   color: var(--bs-emphasis-color);
 
-  /* ノーマル */
+  /* Normal */
   &[data-type="1"] {
     background-color: var(--type-normal-color);
   }
-  /* ほのお */
+  /* Fire */
   &[data-type="2"] {
     background-color: var(--type-fire-color);
   }
-  /* みず */
+  /* Water */
   &[data-type="3"] {
     background-color: var(--type-water-color);
   }
-  /* くさ */
+  /* Grass */
   &[data-type="4"] {
     background-color: var(--type-grass-color);
   }
-  /* でんき */
+  /* Electric */
   &[data-type="5"] {
     background-color: var(--type-electric-color);
   }
-  /* こおり */
+  /* Ice */
   &[data-type="6"] {
     background-color: var(--type-ice-color);
   }
-  /* かくとう */
+  /* Fighting */
   &[data-type="7"] {
     background-color: var(--type-fighting-color);
   }
-  /* どく */
+  /* Poison */
   &[data-type="8"] {
     background-color: var(--type-poison-color);
   }
-  /* じめん */
+  /* Ground */
   &[data-type="9"] {
     background-color: var(--type-ground-color);
   }
-  /* ひこう */
+  /* Flying */
   &[data-type="10"] {
     background-color: var(--type-flying-color);
   }
-  /* エスパー */
+  /* Psychic */
   &[data-type="11"] {
     background-color: var(--type-psychic-color);
   }
-  /* むし */
+  /* Bug */
   &[data-type="12"] {
     background-color: var(--type-bug-color);
   }
-  /* いわ */
+  /* Rock */
   &[data-type="13"] {
     background-color: var(--type-rock-color);
   }
-  /* ゴースト */
+  /* Ghost */
   &[data-type="14"] {
     background-color: var(--type-ghost-color);
   }
-  /* ドラゴン */
+  /* Dragon */
   &[data-type="15"] {
     background-color: var(--type-dragon-color);
   }
-  /* あく */
+  /* Dark */
   &[data-type="16"] {
     background-color: var(--type-dark-color);
   }
-  /* はがね */
+  /* Steel */
   &[data-type="17"] {
     background-color: var(--type-steel-color);
   }

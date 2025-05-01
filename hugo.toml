@@ -1,6 +1,6 @@
-baseURL = 'https://laioxy.github.io/'
+baseURL = 'https://phantazap.github.io/'
 disableKinds = ["taxonomy"]
-languageCode = 'ja'
+languageCode = 'en'
 title = 'Lai-brary'
 
 [page]
@@ -8,8 +8,8 @@ nextPrevInSectionSortOrder = 'asc'
 nextPrevSortOrder = 'asc'
 
 [params]
-scenario = ["-", "Chapter-4クリア後", "Chapter-10から", "Chapter-10クリア後", "?", "?", "ギルド卒業後", "うみのリゾート解禁後"]
-evolmethods1 = ["-", "Lv", "かしこさ", "道具", "テッポウオ仲間", "通信ケーブル"]
-evolmethods2 = ["-", "つうしんケーブル", "攻撃＞防御", "防御＞攻撃", "攻撃＝防御", "たいようのリボン", "げっこうのリボン", "うつくしスカーフ", "ランダム", "ランダム", "オスである", "メスである", "げんしのちから習得", "ころがる習得", "ダブルアタック習得", "ものまね習得"]
-iqgroups = ["A", "B", "C", "D", "E", "F", "G", "H", "未使用", "未使用", "I", "J", "未使用", "未使用", "未使用", "未使用"]
-movingtypes = ["通常", "?", "空中", "通過", "マグマ", "水上"]
+scenario = ["-", "Chapter-4 Complete", "Chapter-10 Started", "Chapter-10 Complete", "?", "?", "Guild Graduated", "Marine Resort Opened"]
+evolmethods1 = ["-", "Lv", "IQ", "道具 (Tool)", "Remoraid in Party", "通信ケーブル (Link Cable)"]
+evolmethods2 = ["-", "つうしんケーブル (Link Cable)", "Attack > Defense", "Defense > Attack", "Attack = Defense", "Sun Ribbon", "Lunar Ribbon", "Beauty Scarf", "ランダム (Random)", "ランダム (Random)", "Male", "Female", "Knows Ancient Power", "Knows Rollout", "Knows Double Hit", "Knows Mimic"]
+iqgroups = ["A", "B", "C", "D", "E", "F", "G", "H", "Unused", "Unused", "I", "J", "Unused", "Unused", "Unused", "Unused"]
+movingtypes = ["General", "?", "Floating", "Move Through Walls", "Move Through Lava", "Move Through Water"]

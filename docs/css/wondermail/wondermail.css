@@ -1,17 +1,17 @@
-/* 無効ポケモン, 無効道具 */
+/* 無効ポケモン, 無効道具 (Invalid Pokemon or Items) */
 option[data-gender="0"],
 option[data-valid="false"],
 li:has(span.invalid) {
   background-color: #ccc;
 }
 
-/* 禁止ポケモン */
+/* 禁止ポケモン (Banned Pokemon) */
 option[data-banned="true"],
 li:has(span.banned) {
   background-color: #ffc0cb;
 }
 
-/* 例外許可ポケモン */
+/* 例外許可ポケモン (Banned Pokemon Exceptions)*/
 option.allow[data-banned="true"],
 li:has(span.allow) {
   background-color: #bfdfff !important;

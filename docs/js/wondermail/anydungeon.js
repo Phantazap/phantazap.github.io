@@ -1,4 +1,4 @@
-import { WonderMail } from '/docs/js/wondermail/password.js';
+import { WonderMail } from '/js/wondermail/password.js';
 
 $(async function () {
   var DungeonData;

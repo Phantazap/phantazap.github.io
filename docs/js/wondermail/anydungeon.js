@@ -1,10 +1,10 @@
-import { WonderMail } from '/js/wondermail/password.js';
+import { WonderMail } from '/docs/js/wondermail/password.js';
 
 $(async function () {
   var DungeonData;
   var FloorData;
 
-  // 要素キャッシュ
+  // Element Cache
   var e_pass_area = $('#pass-area');
   var e_region_jp = $('#region-jp');
   var e_region_na = $('#region-na');
@@ -13,7 +13,7 @@ $(async function () {
   var e_dungeon_floor = $('#dungeon-floor');
   var e_pass_generate = $('#pass-generate');
 
-  // 公開日まで蓋をしておく
+  // Hide until video release date.
   // let now = new Date();
   // let pub = new Date(2024, 2, 15, 22, 0, 0);
   // if (now < pub) {
@@ -23,7 +23,7 @@ $(async function () {
   //   return;
   // }
 
-  // JSON取得
+  // Get JSON
   await Promise.all([getJsonData('dungeon'), getJsonData('floor')])
     .then((results) => {
       DungeonData = results[0];
@@ -36,11 +36,11 @@ $(async function () {
   // Select2
   e_dungeon.select2(select2Config);
 
-  // ダンジョン
+  // Dungeons
   e_dungeon.on('change', function () {
     AppendDungeonFloor(e_dungeon_floor);
   });
-  // 生成
+  // Generate
   e_pass_generate.on('click', function () {
     GeneratePass();
   });
@@ -51,31 +51,31 @@ $(async function () {
   });
 
   /**
-   * ダンジョンをセット
+   * Set Dungeon
    */
   function AppendDungeon(elem = e_dungeon) {
     let prev = elem.val() != undefined ? elem.val() : 0;
     elem.empty();
     for (let i = 0; i < DungeonData.length && i < 0xb4; i++) {
-      // 続きダンジョン除外 (ダミー5以外)
+      // Excluding the following dungeons (except for Dummy 5)
       if (DungeonData[i].FloorPrev > 0 && i != 0xad) continue;
-      // スペシャルエピソード除外
+      // Exclude special episode dungeons
       if (i >= 0x7b && i <= 0xa4) continue;
-      // シェイミのさと除外
+      // Exclude Shaymin Village
       if (i == 0xaf) continue;
 
       elem.append(
         `<option value="${i}" data-search="${DungeonData[i].Name}">[${('00' + i.toString(16)).slice(-2).toUpperCase()}] ${DungeonData[i].Name}</option>`,
       );
     }
-    // ダミー(0xAD)を選択不可にする
+    // Exclude Dummy (0xAD) 
     //$(`select#dungeon option[value="${0xad}"]`).prop("disabled", true);
-    // 値を再度セット
+    // Reset value
     if (prev >= elem.children().length || prev == undefined) prev = 0;
     elem.val(prev);
   }
   /**
-   * 階数をセット
+   * Set Floor Number
    * @param {*} keep
    */
   function AppendDungeonFloor(elem = e_dungeon_floor, keep = false) {
@@ -87,19 +87,19 @@ $(async function () {
     for (let i = start; (difficult || i - dun.FloorPrev <= dun.FloorCount) && (!difficult || i <= start + 0xff); i++) {
       elem.append(`<option value="${i}">${dun.FlagStairs ? '' : 'B'}${i - dun.FloorPrev}F</option>`);
     }
-    // 値をセット
+    // Set Value
     elem.val(dun.FloorPrev + 1);
   }
   /**
-   * パスワード生成
+   * Generate Password
    */
   function GeneratePass() {
     let region = GetRegion();
     let mission = new WonderMail();
 
-    // 報酬値ランダム
+    // Random Reward Value
     //let randomRewordVal = Math.floor(Math.random() * 0x7ff);
-    // SEEDランダム
+    // RANDOM SEED
     let randomSeedVal = Math.floor(Math.random() * 0xffffff);
 
     mission.Status = 4;
@@ -122,7 +122,7 @@ $(async function () {
     e_pass_area.val(ConvertToMultiFormat(mission.Password, 5, 7, 5));
   }
   /**
-   * リージョン取得
+   * Get Region
    * @returns
    */
   function GetRegion() {

@@ -20,7 +20,7 @@ $(async function () {
   var e_fix_wrap = $('.fix-wrap');
   var e_fix_text = $('.fix-text');
 
-  // 公開日まで蓋をしてお (Keep the lid on until the release date. ?)く
+  // Hide until video release date.
   // let now = new Date();
   // let pub = new Date(2024, 3, 18, 18, 0, 0); // 月は0～11
   // if (now < pub) {
@@ -158,7 +158,7 @@ $(async function () {
           `</option>`,
       );
     }
-    // Set the value again
+    // Reset value
     if (prev >= elem.children().length || prev == undefined) prev = 0;
     elem.val(prev);
   }

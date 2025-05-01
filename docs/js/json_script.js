@@ -2,14 +2,14 @@
  * getJsonDataの引数に入れるキー名とJSONファイルのパス
  */
 const jsonPathsArray = {
-  pokemon: '/docs/data/pokemon.min.json',
-  item: '/docs/data/item.min.json',
-  dungeon: '/docs/data/dungeon.min.json',
-  floor: '/docs/data/floor.min.json',
-  fixed: '/docs/data/fixed.min.json',
-  message: '/docs/data/message.min.json',
-  type: '/docs/data/type.min.json',
-  iqgroup: '/docs/data/iqgroup.min.json',
+  pokemon: '/data/pokemon.min.json',
+  item: '/data/item.min.json',
+  dungeon: '/data/dungeon.min.json',
+  floor: '/data/floor.min.json',
+  fixed: '/data/fixed.min.json',
+  message: '/data/message.min.json',
+  type: '/data/type.min.json',
+  iqgroup: '/data/iqgroup.min.json',
 };
 
 /**

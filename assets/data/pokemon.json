@@ -463176,7 +463176,7 @@
   },
   {
     "Id": 433,
-    "Name": "ムクホーク",
+    "Name": "Staraptor",
     "SubName": "",
     "EntityId": 398,
     "SpecieId": 283,
@@ -611523,8 +611523,8 @@
   },
   {
     "Id": 575,
-    "Name": "プクリンママ",
-    "SubName": "カットシーン",
+    "Name": "Mama",
+    "SubName": "Cutscenes",
     "EntityId": 495,
     "SpecieId": 22,
     "PokeDexNo": 40,

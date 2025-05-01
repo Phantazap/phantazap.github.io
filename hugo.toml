@@ -11,5 +11,5 @@ nextPrevSortOrder = 'asc'
 scenario = ["-", "Chapter-4 Complete", "Chapter-10 Started", "Chapter-10 Complete", "?", "?", "Guild Graduated", "Marine Resort Opened"]
 evolmethods1 = ["-", "Lv", "IQ", "道具 (Tool)", "Remoraid in Party", "通信ケーブル (Link Cable)"]
 evolmethods2 = ["-", "つうしんケーブル (Link Cable)", "Attack > Defense", "Defense > Attack", "Attack = Defense", "Sun Ribbon", "Lunar Ribbon", "Beauty Scarf", "ランダム (Random)", "ランダム (Random)", "Male", "Female", "Knows Ancient Power", "Knows Rollout", "Knows Double Hit", "Knows Mimic"]
-iqgroups = ["A", "B", "C", "D", "E", "F", "G", "H", "Unused", "Unused", "I", "J", "Unused", "Unused", "Unused", "Unused"]
-movingtypes = ["General", "?", "Floating", "Move Through Walls", "Move Through Lava", "Move Through Water"]
+iqgroups = ["A", "B", "C", "D", "E", "F", "G", "H", "Unused 8", "Unused 9", "I", "J", "Unused C", "Unused D", "Unused E", "Invalid"]
+movingtypes = ["Standard", "?", "Hovering", "Phase Through Walls", "Lava", "Water"]

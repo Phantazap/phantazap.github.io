@@ -21,7 +21,7 @@ const swap_table = {
     0x0a, 0x01, 0x0e, 0x16, 0x07,
   ],
 };
-// 変換テーブル
+// Encryption Table
 const encryption = [
   0x2e, 0x75, 0x3f, 0x99, 0x09, 0x6c, 0xbc, 0x61, 0x7c, 0x2a, 0x96, 0x4a, 0xf4, 0x6d, 0x29, 0xfa, 0x90, 0x14, 0x9d,
   0x33, 0x6f, 0xcb, 0x49, 0x3c, 0x48, 0x80, 0x7b, 0x46, 0x67, 0x01, 0x17, 0x59, 0xb8, 0xfa, 0x70, 0xc0, 0x44, 0x78,
@@ -38,18 +38,18 @@ const encryption = [
   0x99, 0xfb, 0x08, 0x8a, 0x90, 0x57, 0x8a, 0x7f, 0x61, 0x90, 0x21, 0x88, 0x55, 0xe8, 0xfc, 0x4b, 0x0d, 0x4a, 0x7a,
   0x48, 0xc9, 0xb0, 0xc7, 0xa6, 0xd0, 0x04, 0x7e, 0x05,
 ];
-// パスワード文字列
+// Password String
 const pass_str = '&67NPR89F0+#STXY45MCHJ-K12=%3Q@W';
 
 /**
  * Class: WonderMail
- * 不思議なメールクラス
+ * 
  */
 class WonderMail {
   Sky = true;
-  Checksum1 = 0; // パスに含まれるCRC
-  Checksum2 = 0; // 依頼内容から生成したCRC
-  Status = 4; // 依頼状態値 (4=保留 ※4で固定)
+  Checksum1 = 0; // パスに含まれるCRC (CRC included in the path ?)
+  Checksum2 = 0; // 依頼内容から生成したCRC (CRC generated from the request ?)
+  Status = 4; // 依頼状態値 (4=保留 ※4で固定) (Request status value (4=pending *fixed at 4) ?)
   MissionType = 0;
   MissionFlag = 0;
   RewardType = 0;
@@ -71,24 +71,24 @@ class WonderMail {
   decList = [];
   Password = '';
 
-  // 展開
+  // Expand
   Decode(sky, region, pass = '') {
     if (pass.length > 0) {
       this.Password = pass;
     }
     let swap = GetSwapTable(sky, region);
 
-    // Index変換
+    // Index List
     let idxList = new Array(this.Password.length);
     for (let i = 0; i < this.Password.length; i++) {
       idxList[i] = pass_str.indexOf(this.Password[i]);
     }
-    // Swap変換
+    // Swap List
     let swapList = new Array(this.Password.length);
     for (let i = 0; i < this.Password.length; i++) {
       swapList[i] = idxList[swap[i]];
     }
-    // Bit変換
+    // Bit List
     let bit = 0;
     let val = 0;
     let convList = [];
@@ -144,7 +144,7 @@ class WonderMail {
       this.Floor = (decode[18] >> 2) | ((decode[19] << 6) & 0xff);
       this.Fixed = (decode[19] >> 2) | ((decode[20] << 6) & 0xff);
       this.NullByte = decode[20] >> 2;
-      // CRC再計算
+      // CRC Recalculation
       if (this.Checksum1 < 0) this.Checksum1 += 0x100000000;
       this.Checksum2 = this.CalcCRC32(decode);
     } else {
@@ -162,7 +162,7 @@ class WonderMail {
       this.Seed = ((decode[9] >> 7) | (decode[10] << 1) | (decode[11] << 9) | (decode[12] << 17)) & 0xffffff;
       this.Dungeon = ((decode[12] >> 7) | (decode[13] << 1)) & 0xff;
       this.Floor = ((decode[13] >> 7) | (decode[14] << 1)) & 0xff;
-      // ハッシュ再計算
+      // Hash Recalculation
       let hash = 0;
       for (let i = 1; i < decode.length; i++) {
         hash += decode[i] + i;
@@ -195,7 +195,7 @@ class WonderMail {
       decode[19] = parseInt(this.Fixed << 2) | parseInt(this.Floor >> 6);
       decode[20] = parseInt(this.Fixed >> 6);
       decode[21] = 0;
-      // CRC化→格納
+      // CRC化→格納 (CRC conversion → storage ?)
       let crc = this.GetCRC32Table();
       let hash = 0xffffffff;
       for (let i = 4; i < decode.length - 1; i++) {
@@ -223,7 +223,7 @@ class WonderMail {
       decode[12] = parseInt(this.Dungeon << 7) | parseInt(this.Seed >> 17);
       decode[13] = parseInt(this.Floor << 7) | parseInt(this.Dungeon >> 1);
       decode[14] = parseInt(this.Floor >> 1);
-      // ハッシュ化
+      // Hashing
       let hash = 0;
       for (let i = 1; i < decode.length - 1; i++) {
         hash += decode[i] + i;
@@ -232,7 +232,7 @@ class WonderMail {
       decode[0] = hash;
     }
 
-    // 8bitにトリミング
+    // Trim to 8bit
     for (let i = 0; i < decode.length; i++) decode[i] &= 0xff;
     this.decList = decode.concat();
 
@@ -278,7 +278,7 @@ class WonderMail {
     for (let i = 0; i < swap.length; i++) idx[swap[i]] = sw[i] & (pass_str.length - 1);
     this.idxList = idx.concat();
 
-    // パスワード化
+    // Password
     let pass = '';
     for (let i = 0; i < swap.length; i++) pass += pass_str.charAt(idx[i]);
 
@@ -286,9 +286,9 @@ class WonderMail {
   }
 
   /**
-   * CRC32ハッシュ化
-   * @param {*} arr 対象
-   * @returns CRC32ハッシュ
+   * CRC32 Hashing
+   * @param {*} arr 対象 (Target ?)
+   * @returns CRC32 Hash
    */
   CalcCRC32(arr) {
     let crc = this.GetCRC32Table();
@@ -303,7 +303,7 @@ class WonderMail {
   }
 
   /**
-   * CRC32テーブル作成
+   * CRC32 Table Creation
    */
   GetCRC32Table() {
     let res = new Array(256);

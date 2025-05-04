@@ -1165,10 +1165,10 @@
     }
   },
   {
-    "Id": 1,
+    "Id": 2,
     "Name": "Ivysaur",
     "SubName": "",
-    "EntityId": 1,
+    "EntityId": 2,
     "SpecieId": 1,
     "PokeDexNo": 2,
     "MovingSpeed": 1,

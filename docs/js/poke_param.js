@@ -38,7 +38,7 @@ const poke_movetype = [
   { id: 5, name: 'Water' },
 ];
 
-// かしこさグループ
+// IQ Group
 const poke_iqgroup = [
   { id: 0, name: 'A' },
   { id: 1, name: 'B' },

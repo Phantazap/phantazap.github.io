@@ -178,7 +178,7 @@ $(async function () {
     mission.MissionType = 0x6;
     mission.MissionFlag = 0x0;
     mission.RewardType = 0x5;
-    mission.RewardValue = e_pokemon.val() ?? 0;
+    mission.RewardValue = 4095;
     mission.Client = 0x11e;
     mission.Target1 = 0x11e;
     mission.Target2 = 0x000;

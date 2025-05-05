@@ -11,7 +11,7 @@ $(async function () {
   var e_region_jp = $('#region-jp');
   var e_region_na = $('#region-na');
   var e_region_eu = $('#region-eu');
-  var e_pokemon = $('#pokemon');
+  var e_pokemon = 3;
   var e_pass_generate = $('#pass-generate');
   var e_context_regionfree = $('#context-regionfree');
 

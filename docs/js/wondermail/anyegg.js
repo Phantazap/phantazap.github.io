@@ -11,7 +11,7 @@ $(async function () {
   var e_region_jp = $('#region-jp');
   var e_region_na = $('#region-na');
   var e_region_eu = $('#region-eu');
-  var e_pokemon = 3;
+  var e_pokemon = $('#pokemon');
   var e_pass_generate = $('#pass-generate');
   var e_context_regionfree = $('#context-regionfree');
 
@@ -153,7 +153,7 @@ $(async function () {
       let subName = PokemonData[i % 600].SubName;
       if (subName.length > 0 && subName != null) pokeName += ` - ${subName}`;
       elem.append(
-        `<option value="${i}" data-search="${pokeName}" data-pokeid="${i % 600}" >` +
+        `<option value="${i}" data-search="${pokeName}" data-pokeid="${3}" >` +
           `[${('000' + i.toString(16)).slice(-3).toUpperCase()}] ${pokeName} (${poke_gender[gender].name})` +
           `</option>`,
       );

@@ -153,7 +153,7 @@ $(async function () {
       let subName = PokemonData[i % 600].SubName;
       if (subName.length > 0 && subName != null) pokeName += ` - ${subName}`;
       elem.append(
-        `<option value="${i}" data-search="${pokeName}" data-pokeid="${3}" >` +
+        `<option value="${i}" data-search="${pokeName}" data-pokeid="${i % 600}" >` +
           `[${('000' + i.toString(16)).slice(-3).toUpperCase()}] ${pokeName} (${poke_gender[gender].name})` +
           `</option>`,
       );
@@ -178,7 +178,7 @@ $(async function () {
     mission.MissionType = 0x6;
     mission.MissionFlag = 0x0;
     mission.RewardType = 0x5;
-    mission.RewardValue = e_pokemon.val() ?? 0;
+    mission.RewardValue = 5;
     mission.Client = 0x11e;
     mission.Target1 = 0x11e;
     mission.Target2 = 0x000;

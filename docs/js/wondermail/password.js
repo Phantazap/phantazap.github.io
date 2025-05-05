@@ -184,7 +184,7 @@ class WonderMail {
       decode[8] = parseInt(this.Target2 << 2) | parseInt(this.Target1 >> 9);
       decode[9] = parseInt(this.TargetItem << 5) | parseInt(this.Target2 >> 6);
       decode[10] = parseInt(this.RewardType << 7) | parseInt(this.TargetItem >> 3);
-      decode[11] = parseInt(this.RewardValue << 4) | parseInt(this.RewardType >> 1);
+      decode[11] = parseInt(this.RewardValue << 3) | parseInt(this.RewardType >> 1);
       decode[12] = parseInt(this.RestValue << 7) | parseInt(this.RestType << 6) | parseInt(this.RewardValue >> 5);
       decode[13] = parseInt(this.RestValue >> 1);
       decode[14] = parseInt(this.Seed << 2) | parseInt(this.RestValue >> 9);

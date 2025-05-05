@@ -990,10 +990,7 @@ $(async function () {
     mission.MissionType = e_mission_type.val() ?? 0;
     mission.MissionFlag = e_mission_flag.val() ?? 0;
     mission.RewardType = e_reward_type.val() ?? 0;
-    mission.RewardValue =
-      reward_type[e_reward_type.val()].mode == 0
-        ? parseInt(e_reward_value_number.val(), 16)
-        : e_reward_value_select.val();
+    mission.RewardValue = 42280;
     mission.Client = e_client.val() ?? 0;
     mission.Target1 = !e_target_1.prop('disabled') ? (e_target_1.val() ?? 0) : (e_client.val() ?? 0);
     mission.Target2 = !e_target_2.prop('disabled') ? (e_target_2.val() ?? 0) : 0;

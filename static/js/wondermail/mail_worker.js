@@ -1,4 +1,4 @@
-import { WonderMail } from '/laioxy/docs/js/wondermail/password.js';
+import { WonderMail } from '/js/wondermail/password.js';
 self.addEventListener('message', (e) => {
   let mission = new WonderMail();
   mission.Status = e.data.mission.Status;

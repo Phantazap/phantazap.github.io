@@ -1,7 +1,7 @@
 baseURL = 'https://phantazap.github.io/'
 disableKinds = ["taxonomy"]
 languageCode = 'en'
-title = 'Zap's Site'
+title = 'Lai-brary'
 
 [page]
 nextPrevInSectionSortOrder = 'asc'

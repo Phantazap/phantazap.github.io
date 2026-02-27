@@ -1,4 +1,4 @@
-import { WonderMail } from '/js/wondermail/password.js';
+import { WonderMail } from '/laioxy/docs/js/wondermail/password.js';
 
 $(async function () {
   var DungeonData;

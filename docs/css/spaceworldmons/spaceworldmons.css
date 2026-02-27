@@ -1,0 +1,311 @@
+:root {
+  --type-normal-color: #a8a77a;
+  --type-fire-color: #ee8130;
+  --type-water-color: #6390f0;
+  --type-electric-color: #f7d02c;
+  --type-grass-color: #7ac74c;
+  --type-ice-color: #96d9d6;
+  --type-fighting-color: #c22e28;
+  --type-poison-color: #a33ea1;
+  --type-ground-color: #e2bf65;
+  --type-flying-color: #a98ff3;
+  --type-psychic-color: #f95587;
+  --type-bug-color: #a6b91a;
+  --type-rock-color: #b6a136;
+  --type-ghost-color: #735797;
+  --type-dragon-color: #6f35fc;
+  --type-dark-color: #705746;
+  --type-steel-color: #b7b7ce;
+  --type-fairy-color: #d685ad;
+}
+
+html {
+  height: 100%;
+  font-size: 15px;
+  body {
+    height: 100%;
+    padding-top: 100px;
+    font-family: Verdana, "Droid Sans", "メイリオ", Meiryo,
+      var(--bs-body-font-family);
+  }
+  select {
+    option:disabled {
+      color: #ccc;
+    }
+  }
+  i {
+    margin-right: 2px;
+  }
+  .context-sm {
+    font-size: 0.8em;
+    * + & {
+      margin-left: 4px;
+    }
+  }
+  p:last-child {
+    margin-bottom: 0; /* Remove margin from last*/
+  }
+}
+
+/* Header */
+.navbar {
+  .navbar-brand {
+    display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+
+    img {
+      width: calc(32px * 2);
+      height: calc(32px * 2);
+      image-rendering: pixelated;
+    }
+  }
+  .drop-shadow {
+    /* filter: drop-shadow(0px 0px 2px #333);
+    transform: translateZ(0); */
+  }
+}
+
+/* Main Container */
+#main-container {
+  max-width: 1200px;
+}
+
+/* Top Contents */
+.top-contents {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    li p.link_context {
+      font-size: 0.8em;
+    }
+  }
+  h2.top-icon {
+    display: flex;
+    line-height: 1em;
+    img {
+      width: auto;
+      height: 1em;
+      margin-right: 0.4em;
+      display: inline-block;
+    }
+  }
+}
+
+/* Loading */
+.loading {
+  background-color: #ffffffcf;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  #progress-wrap {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+    #progress-worker {
+      width: 100%;
+    }
+    #cancel-btn {
+      width: fit-content;
+    }
+  }
+}
+
+/* Select2 Unified Floating Design */
+.form-floating {
+  .select2-container--bootstrap-5 {
+    width: auto !important;
+  }
+  span.select2.select2-container span.selection .select2-selection {
+    padding-top: 1.625rem;
+    padding-bottom: 0.625rem;
+    min-height: calc(3.5rem + calc(var(--bs-border-width) * 2));
+    border-radius: var(--bs-border-radius);
+    border: var(--bs-border-width) solid var(--bs-border-color);
+  }
+}
+.input-group > .form-floating > .select2 > .selection > .select2-selection {
+  border-radius: var(--bs-border-radius) 0 0 var(--bs-border-radius) !important;
+}
+/* Select2 Disabled Items */
+.select2-results__option--disabled {
+  background-color: var(--bs-secondary-bg) !important;
+  display: none;
+}
+
+/*Cobblemon Wiki grid css*/
+.main-content-grid {
+    width: 100%; 
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+    gap: 12px;
+}
+
+.image-tile {
+    background-color: var(--content-background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 4px;
+    transition: all 0.2s ease
+}
+
+.image-tile > * {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.image-tile .image-container {
+    position: relative;
+    height: 100%
+}
+
+.image-tile .image-container > a {
+    padding: 16px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box
+}
+
+.image-tile .image-container.transparent > a {
+    opacity: 0
+}
+
+.image-tile > a {
+    background-color: var(--content-background-color-hover);
+    border-radius: 0 0 4px 4px;
+    padding: 4px;
+    transition: all 0.2s ease
+}
+
+.image-tile:hover {
+    background-color: var(--content-background-color-hover)
+}
+
+.image-tile:hover > a {
+    background-color: var(--content-background-color-hover-light)
+}
+
+/* Youtube Responsive */
+.youtube {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  @media only screen and (min-width: 768px) {
+    max-width: 600px;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+table.table {
+  margin-bottom: 0;
+}
+
+/* Tooltip */
+.tooltip {
+  font-family: unset;
+  --bs-tooltip-max-width: 24rem;
+}
+
+/* Type */
+.type {
+  font-size: 12px;
+  min-width: 6rem;
+  display: inline-block;
+  text-align: center;
+  padding: 2px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: #3333334c solid 3px;
+  color: var(--bs-emphasis-color);
+
+  /* Normal */
+  &[data-type="1"] {
+    background-color: var(--type-normal-color);
+  }
+  /* Fire */
+  &[data-type="2"] {
+    background-color: var(--type-fire-color);
+  }
+  /* Water */
+  &[data-type="3"] {
+    background-color: var(--type-water-color);
+  }
+  /* Grass */
+  &[data-type="4"] {
+    background-color: var(--type-grass-color);
+  }
+  /* Electric */
+  &[data-type="5"] {
+    background-color: var(--type-electric-color);
+  }
+  /* Ice */
+  &[data-type="6"] {
+    background-color: var(--type-ice-color);
+  }
+  /* Fighting */
+  &[data-type="7"] {
+    background-color: var(--type-fighting-color);
+  }
+  /* Poison */
+  &[data-type="8"] {
+    background-color: var(--type-poison-color);
+  }
+  /* Ground */
+  &[data-type="9"] {
+    background-color: var(--type-ground-color);
+  }
+  /* Flying */
+  &[data-type="10"] {
+    background-color: var(--type-flying-color);
+  }
+  /* Psychic */
+  &[data-type="11"] {
+    background-color: var(--type-psychic-color);
+  }
+  /* Bug */
+  &[data-type="12"] {
+    background-color: var(--type-bug-color);
+  }
+  /* Rock */
+  &[data-type="13"] {
+    background-color: var(--type-rock-color);
+  }
+  /* Ghost */
+  &[data-type="14"] {
+    background-color: var(--type-ghost-color);
+  }
+  /* Dragon */
+  &[data-type="15"] {
+    background-color: var(--type-dragon-color);
+  }
+  /* Dark */
+  &[data-type="16"] {
+    background-color: var(--type-dark-color);
+  }
+  /* Steel */
+  &[data-type="17"] {
+    background-color: var(--type-steel-color);
+  }
+}
